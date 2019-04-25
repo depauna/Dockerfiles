@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM depauna/base:latest
 RUN yum install -y java-1.8.0-openjdk-devel
 RUN cd /opt && \
     wget -q -O- https://www-eu.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz && \
