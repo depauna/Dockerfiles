@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exuo pipefail
+
 dockerfilepath=$(dirname "$0")
 img_name=$1
 dockerhub_username=$2
