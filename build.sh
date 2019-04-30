@@ -8,4 +8,4 @@ dockerhub_username=$2
 
 cd "$dockerfilepath"/"$img_name" || return
 
-sudo docker build . -t "${dockerhub_username}"/"${img_name}":latest
+docker build . -t "${dockerhub_username}"/"${img_name}":latest
