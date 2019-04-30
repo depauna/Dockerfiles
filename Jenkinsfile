@@ -7,6 +7,7 @@ def buildDockerfile(img_name) {
 }
 
 pipeline {
+    agent any
     stages {
         stage('Build base container') {
             steps {
