@@ -1,7 +1,7 @@
 def buildDockerfile(img_name) {
-    sh "build.sh $img_name depauna"
+    sh("""build.sh $img_name depauna""")
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerNatan', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-        sh "push.sh $img_name depauna $USERNAME $PASSWORD"
+        sh("""push.sh $img_name depauna $USERNAME $PASSWORD""")
     }
 }
 
