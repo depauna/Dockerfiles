@@ -1,8 +1,9 @@
 def dockerhub_username = 'depauna'
 def buildDockerfile(img_name) {
-    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerNatan', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
     sh """build.sh $img_name $dockerhub_username"""
-    sh """push.sh $img_name $dockerhub_username $USERNAME $PASSWORD"""
+    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerNatan', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+        sh """push.sh $img_name $dockerhub_username $USERNAME $PASSWORD"""
+    }
 }
 
 pipeline {
